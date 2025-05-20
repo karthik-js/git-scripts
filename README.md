@@ -1,60 +1,41 @@
 # Git Scripts
 
-A collection of useful Git scripts and configurations to enhance your Git workflow. This repository provides a set of tools and configurations that make Git operations more efficient and user-friendly.
+A collection of Git scripts and configurations to enhance your Git workflow. These tools make Git operations more efficient and user-friendly.
 
-## Features
-
-### Git Scripts
+## Scripts
 
 1. **git-smart-fetch.sh** (`git sf`)
 
-   - Smart fetch that automatically handles ref lock issues
-   - Automatically prunes stale remote-tracking branches
-   - Provides clear error messages and automatic recovery
+   - Smart fetch with automatic issue resolution
+   - Auto-prunes stale remote-tracking branches
+   - Clear error messages and recovery
 
 2. **git-clean-branches.sh** (`git clean-branches`)
 
-   - Cleans up merged and stale branches
-   - Safely removes branches that have been merged into main/master
-   - Removes branches whose remote tracking branches are gone
-   - Interactive confirmation before deletion
+   - Removes merged and stale branches
+   - Safe cleanup of branches merged into main/master
+   - Interactive confirmation
 
 3. **better-branch-output.sh** (`git bb`)
 
-   - Enhanced branch listing with better formatting
-   - Shows more detailed branch information
-   - Improved readability of branch status
+   - Enhanced branch listing
+   - Detailed branch information
+   - Better readability
 
 4. **git-interactive-stage.sh** (`git is`)
-   - Interactive file staging using fzf
+   - Interactive file staging with fzf
    - Preview changes before staging
-   - Multi-select support for staging multiple files
-   - Shows staged changes summary after staging
+   - Multi-select support
+   - Staged changes summary
 
-### Git Configuration
+## Quick Start
 
-The repository includes a comprehensive Git configuration template that sets up:
-
-- Sensible defaults for common Git operations
-- Useful aliases for frequent commands
-- Optimized settings for performance and usability
-- GPG signing configuration
-- Branch management settings
-- Color and UI improvements
-
-## Installation
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/karthik-js/git-scripts.git
-   cd git-scripts
-   ```
-
-2. Run the setup script:
-   ```bash
-   ./setup.sh
-   ```
+```bash
+# Clone and setup
+git clone https://github.com/karthik-js/git-scripts.git
+cd git-scripts
+./setup.sh
+```
 
 The setup script will:
 
@@ -62,29 +43,65 @@ The setup script will:
 - Set up the Git configuration
 - Configure global Git aliases
 
-## Usage
+## Available Commands
 
-After installation, you can use the following commands:
+- `git sf` - Smart fetch
+- `git clean-branches` - Clean up branches
+- `git bb` - Better branch output
+- `git is` - Interactive staging
 
-- `git sf` - Smart fetch with automatic issue resolution
-- `git clean-branches` - Clean up merged and stale branches
-- `git bb` - Enhanced branch listing
-- `git is` - Interactive file staging with preview (requires fzf)
+## Git Aliases
 
-### Additional Git Aliases
+### Status and Logging
 
-The configuration includes several useful aliases:
+- `git s` - Short status with branch info
+- `git lg` - Pretty log (last 30 commits)
+- `git todaylog` - Today's commits
 
-- `git s` - Short and clean status with branch info
-- `git lg` - Pretty log with graph visualization
-- `git amend` - Amend last commit without changing message
-- `git undo` - Undo last commit but keep changes staged
-- `git root` - Print repository root directory
-- `git stash-pop-safe` - Safer alternative to stash pop
+### Commit Management
+
+- `git amend` - Amend last commit
+- `git undo` - Undo last commit
+- `git stash-pop-safe` - Safe stash pop
+
+### Repository Info
+
+- `git root` - Show repo root
+
+## Git Configuration
+
+The setup includes optimized Git settings:
+
+- Smart defaults for common operations
+- Branch sorting by commit date
+- Automatic remote tracking
+- GPG signing with SSH
+- Automatic maintenance
+- Color-coded output
+
+### Configuration Details
+
+- Core settings optimized for modern development
+- Automatic CRLF handling
+- Column-based UI for better readability
+- Branch sorting by most recent commits
+- Tag sorting by version
+- Default branch set to main
+- Simple push strategy with auto remote setup
+- Automatic tag following
+- Prune on fetch for clean repository
+- Help autocorrect with prompts
+- Verbose commits with GPG signing
+- Rerere enabled for conflict resolution
+- Rebase with reference updates
+- SSH-based GPG signing
+- Automatic maintenance with incremental strategy
+- Optimized garbage collection
+- Color-coded UI
 
 ## Dependencies
 
-- [fzf](https://github.com/junegunn/fzf) - Required for interactive staging (`git is`)
+- [fzf](https://github.com/junegunn/fzf) - Required for `git is`
 
 ## Contributing
 
@@ -92,8 +109,8 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## License
 
-This project is open source and available under the MIT License.
+MIT License - See [LICENSE](LICENSE) file
 
 ## Author
 
-Created by [Karthik JS](https://github.com/karthik-js)
+[Karthik JS](https://github.com/karthik-js)
