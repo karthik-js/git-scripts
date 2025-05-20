@@ -38,6 +38,7 @@ alias_defs=(
   "bb=!$SCRIPTS_TARGET_DIR/better-branch-output.sh"
   "sf=!$SCRIPTS_TARGET_DIR/git-smart-fetch.sh"
   "clean-branches=!$SCRIPTS_TARGET_DIR/git-clean-branches.sh"
+  "is=!$SCRIPTS_TARGET_DIR/git-interactive-stage.sh"
 )
 
 for alias_def in "${alias_defs[@]}"; do
