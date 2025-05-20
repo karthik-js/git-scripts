@@ -1,0 +1,72 @@
+[core]
+	editor = nvim
+	autocrlf = input
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+	gpgSign = true
+
+[fetch]
+	prune = true
+	all = true
+	pruneTags = true
+
+[help]
+	autocorrect = prompt
+
+[commit]
+	verbose = true
+	gpgSign = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[rebase]
+	updateRefs = true
+
+[gpg]
+	format = ssh
+
+[maintenance]
+  	auto = true
+	strategy = incremental
+
+[gc]
+	auto = 256
+
+[color]
+	ui = auto
+
+[alias]
+	# Short and clean git status with branch info
+	s = status -sb
+
+	# Pretty git log: one line per commit, with graph, branches, tags
+	lg = log --oneline --decorate --graph --all
+
+	# Amend the last commit without changing the message
+	amend = commit --amend --no-edit
+
+	# Undo the last commit but keep all changes staged
+	undo = reset --soft HEAD~1
+
+	# Print the absolute path to the repo root directory
+	root = rev-parse --show-toplevel
+
+	# Safer alternative to stash pop: applies stash manually, then drops it
+	stash-pop-safe = "!git stash show -p | git apply && git stash drop"
